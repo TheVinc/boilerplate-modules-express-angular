@@ -1,5 +1,5 @@
 node_modules
 *.sublime*
 bin
-src/modules/front/bower_components
+src/modules/front/public/bower_components
 **/.DS_Store
