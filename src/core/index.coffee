@@ -34,14 +34,6 @@ module.exports = () ->
 	app.use(bodyParser.urlencoded({extended: false}))
 	app.use(bodyParser.json())
 	app.use(bodyParser.json({ type: 'application/vnd.api+json' }))
-	
-
-	# app.use(express.static(Path.resolve(__dirname + '/../front')));
-
-	# Front webservice. Must be called last
-	# app.get /.*/, (req, res, next) ->
-		# res.sendFile Path.resolve __dirname + '/../front/index.html'
-
 
 	# Module initialization
 	plugin_env = {
