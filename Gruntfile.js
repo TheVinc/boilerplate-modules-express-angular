@@ -38,7 +38,16 @@ module.exports = function(grunt) {
 			}
 		},
 		copy: {},
-		subgrunt: {}
+		subgrunt: {},
+		mochaTest: {
+			test: {
+				options: {
+					reporter: 'spec',
+					require: 'coffee-script/register'
+				},
+				src: ['tests/**/*.coffee']
+			}
+		}
 	}
 
 	for (var k in config.modules) {
@@ -90,8 +99,10 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-nodemon');
 	grunt.loadNpmTasks('grunt-concurrent');
+	grunt.loadNpmTasks('grunt-mocha-test');
 
 	// Specify Grunt tasks
 	grunt.registerTask('default', ['coffee', 'subgrunt']);
+	grunt.registerTask('test', ['mochaTest']);
 	grunt.registerTask('server', ['default', 'concurrent']);
 }
